@@ -1,38 +1,27 @@
-<h2 class="left">Du code</h2>
+<h3>Du code</h3>
+
+
+<p>Utiliser la fleche du bas !</p>
 
 <section data-transition="slide-in none-out">
   <pre>
     <code lang="cpp" data-trim data-noescape data-line-numbers>
-    Person* dumb = new Person("Dumb");
-    unique_ptr&lt;Person&gt; smart(new Person("Smart"));
-    unique_ptr&lt;int&gt; intPtr(new int[10000000]);
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+         ~Babysitter() { delete ptr; }
 
-    cout << smart.get() << endl;
+         Babysitter(Babysitter& other) {
+             ptr = other.ptr;
+             other.ptr = nullptr;
+         }
 
-    template&lt;class T&gt;
-    class Babysitter {
-       T *ptr;
-    public:
-       Babysitter(T *ptr = nullptr) : ptr(ptr) {}
-       ~Babysitter() { delete ptr; }
-
-       Babysitter(Babysitter& other) {
-           ptr = other.ptr;
-           other.ptr = nullptr;
-       }
-
-       Babysitter& operator=(Babysitter& other) {
-           if (&other == this) return *this;
-           delete ptr;
-           ptr = other.ptr;
-           other.ptr = nullptr;
-           return *this;
-       }
-
-       bool isNull() const { return ptr == nullptr; }
-       T &operator*() const { return *ptr; }
-       T *operator->() const { return ptr; }
-    };
+         bool isNull() const { return ptr == nullptr; }
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
     </code>
   </pre>
   <small>Overview du code</small>
@@ -40,52 +29,32 @@
 
 <section data-transition="none">
   <pre>
-    <code lang="cpp" data-trim data-noescape data-line-numbers="1,2,3">
-    Person* dumb = new Person("Dumb");
-    unique_ptr&lt;Person&gt; smart(new Person("Smart"));
-    unique_ptr&lt;int&gt; intPtr(new int[10000000]);
+    <code lang="cpp" data-trim data-noescape data-line-numbers="3">
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+         ~Babysitter() { delete ptr; }
 
-    cout << smart.get() << endl;
+         Babysitter(Babysitter& other) {
+             ptr = other.ptr;
+             other.ptr = nullptr;
+         }
 
-    template&lt;class T&gt;
-    class Babysitter {
-       T *ptr;
-    public:
-       Babysitter(T *ptr = nullptr) : ptr(ptr) {}
-       ~Babysitter() { delete ptr; }
-
-       Babysitter(Babysitter& other) {
-           ptr = other.ptr;
-           other.ptr = nullptr;
-       }
-
-       Babysitter& operator=(Babysitter& other) {
-           if (&other == this) return *this;
-           delete ptr;
-           ptr = other.ptr;
-           other.ptr = nullptr;
-           return *this;
-       }
-
-       bool isNull() const { return ptr == nullptr; }
-       T &operator*() const { return *ptr; }
-       T *operator->() const { return ptr; }
-    };
+         bool isNull() const { return ptr == nullptr; }
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
     </code>
   </pre>
 
-  <small>Instanciation</small>
+  <small>Attributs</small>
 </section>
 
 <section data-transition="none">
   <pre>
-    <code lang="cpp" data-trim data-noescape data-line-numbers="14,15,16,17">
-    Person* dumb = new Person("Dumb");
-    unique_ptr&lt;Person&gt; smart(new Person("Smart"));
-    unique_ptr&lt;int&gt; intPtr(new int[10000000]);
-
-    cout << smart.get() << endl;
-
+    <code lang="cpp" data-trim data-noescape data-line-numbers="8,9,10,11">
     template&lt;class T&gt;
     class Babysitter {
        T *ptr;
@@ -96,14 +65,6 @@
        Babysitter(Babysitter& other) {
            ptr = other.ptr;
            other.ptr = nullptr;
-       }
-
-       Babysitter& operator=(Babysitter& other) {
-           if (&other == this) return *this;
-           delete ptr;
-           ptr = other.ptr;
-           other.ptr = nullptr;
-           return *this;
        }
 
        bool isNull() const { return ptr == nullptr; }
@@ -117,39 +78,25 @@
 
 <section data-transition="none">
   <pre>
-    <code lang="cpp" data-trim data-noescape data-line-numbers="19,20,21,22,23,24,25">
-    Person* dumb = new Person("Dumb");
-    unique_ptr&lt;Person&gt; smart(new Person("Smart"));
-    unique_ptr&lt;int&gt; intPtr(new int[10000000]);
+    <code lang="cpp" data-trim data-noescape data-line-numbers="13,14,15">
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+         ~Babysitter() { delete ptr; }
 
-    cout << smart.get() << endl;
+         Babysitter(Babysitter& other) {
+             ptr = other.ptr;
+             other.ptr = nullptr;
+         }
 
-    template&lt;class T&gt;
-    class Babysitter {
-       T *ptr;
-    public:
-       Babysitter(T *ptr = nullptr) : ptr(ptr) {}
-       ~Babysitter() { delete ptr; }
-
-       Babysitter(Babysitter& other) {
-           ptr = other.ptr;
-           other.ptr = nullptr;
-       }
-
-       Babysitter& operator=(Babysitter& other) {
-           if (&other == this) return *this;
-           delete ptr;
-           ptr = other.ptr;
-           other.ptr = nullptr;
-           return *this;
-       }
-
-       bool isNull() const { return ptr == nullptr; }
-       T &operator*() const { return *ptr; }
-       T *operator->() const { return ptr; }
-    };
+         bool isNull() const { return ptr == nullptr; }
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
     </code>
   </pre>
-  <small>Surcharge de l'oppérateur d'initialisation qui implémente la sémentique de déplacement</small>
+  <small>Surcharges</small>
 </section>
 
