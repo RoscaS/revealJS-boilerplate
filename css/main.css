@@ -10,3 +10,29 @@
 .column {
 
 }
+
+
+
+/* Helpers */
+
+.small {
+    transform: scale(.5);
+}
+
+.signature {
+    float: right;
+    font-size: .8em;
+}
+
+.highlight {
+    color: #ff7200;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
