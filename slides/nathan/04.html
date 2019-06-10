@@ -1,0 +1,16 @@
+<section>
+    <h2><span class="orange">weak</span>_ptr</h2>
+    <p class="fragment">Complément du <b>shared_ptr</b></p>
+    <p class="fragment"><b>Pas d'impacte</b> sur la durée de vie sur l'objet pointé</p>
+    <p class="fragment">Pas compter dans le <b>compteur</b> du shared_ptr</p>
+</section>
+<section>
+    <h3>lock</h3>
+    <div class="fragment">
+    <pre class="cpp">
+        <code lang="cpp" data-trim data-noescape data-line-numbers>
+            std::shared_ptr&lt;std::string&gt; ptr = weak_ptr.lock();
+        </code>
+    </pre>
+    </div>
+</section>
