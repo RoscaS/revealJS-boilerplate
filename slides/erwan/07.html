@@ -1,0 +1,18 @@
+<h3>Partage implicite</h3>
+
+<p>En ce qui nous concerne, voici ce qu'il faut en retenir:</p>
+
+<div class="fragment">
+    <pre class="cpp">
+        <code data-trim data-noescape data-line-numbers>
+                QPixmap p1, p2;
+                p1.load("image.bmp");
+                p2 = p1;                         // Copie superficielle
+
+                QPainter paint;
+                paint.begin(&p2);               
+                paint.drawText(0,50, "Hi");      // Copie profonde effectuée seulement ici
+                paint.end();
+        </code>
+    </pre>
+</div>

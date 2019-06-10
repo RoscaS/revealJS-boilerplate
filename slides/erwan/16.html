@@ -1,0 +1,16 @@
+<h3>QExplicitlySharedDataPointer</h3>
+
+<p>Partage de donnée fort</p>
+
+<div class="fragment">
+    
+    <p>Exactement la même classe que QSharedDataPointer, sauf qu’elle n’effectuera jamais de détachement par elle-même.</p>
+    <p>Il faudra appeler la fonction “detach” explicitement</p>
+
+</div>
+
+<aside class="notes">Cela permet un meilleur controle sur le détachement et esquive les opérations inutiles.</aside>
+
+
+
+

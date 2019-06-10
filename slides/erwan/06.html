@@ -1,0 +1,23 @@
+<h3>Partage implicite</h3>
+
+<p>Ne copie les données en profonduer qu'au moment où elles sont modifiées si elles le sont, repoussant ainsi l'utilisation du CPU au dernier moment ou à jamais.</p>
+
+<div class="fragment">
+    <pre class="cpp">
+        <code data-trim data-noescape data-line-numbers>
+                void QPen::setStyle(Qt::PenStyle style)
+                {
+                    detach();
+                    d->style = style;
+                }
+                
+                void QPen::detach()
+                {
+                    if (d->ref != 1)
+                    {
+                        //Deep copy performed here
+                    }
+                }
+        </code>
+    </pre>
+</div>
