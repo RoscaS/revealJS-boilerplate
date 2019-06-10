@@ -1,0 +1,26 @@
+<h3>QPointer</h3>
+
+<p>Partage de pointeur faible</p>
+
+<p>Fonctionne uniquement sur les objects QObject ou ses dérivés.</p>
+
+
+<div class="fragment">
+    
+    <p>Il peut vivre dans plusieurs thread, ce qui rend dangereux ce genre de code:</p>
+
+    <pre class="cpp">
+        <code data-trim data-noescape data-line-numbers>
+                
+            QPointer<QObject> o = getObject();
+
+            // [...]
+
+            if (!o.isNull())
+                o->setProperty("objectName", "Object");
+        </code>
+    </pre>
+    <p>Les pointeurs faibles servent à tester l’existence d’un objet. C’est l’utilité qu’on en fait ici. Mais comme son état peut être modifié par un autre thread, son existence une ou deux lignes après n’est donc plus garantie.</p>
+</div>
+
+<aside class="notes">Pour les utliser, il faut donc garantir par un moyen externe qu’ils ne seront pas supprimés. Par exemple comme les QWidget qui ne sont modifiés que dans le thread GUI.</aside>

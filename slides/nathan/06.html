@@ -1,0 +1,71 @@
+<section>
+    <h3>Problématique (Référence circulaire)</h3>
+    <p class="fragment">Classe <span class="orange">Etudiant</span></p>
+    <p class="fragment">Attribut shared_ptr&lt;<span class="orange">Etudiant</span>&gt; (binôme)</p>
+    <p class="fragment">Destruction</p>
+</section>
+<section>
+    <h3>Problématique (Référence circulaire)</h3>
+    <pre class="fragment" class="cpp" class="fragment">
+    <code lang="cpp" data-trim data-noescape data-line-numbers>
+        class Etudiant
+        {
+        public:
+          Etudiant(const std::string& nom) : nom_(nom){}
+          ~Etudiant() {}
+
+          void creerBinome(std::shared_ptr&lt;Etudiant&gt; & binome) {
+            this->binome_ = binome;
+          }
+
+        private:
+          std::string nom_;
+          std::shared_ptr&lt;Etudiant&gt; binome_;
+        };
+    </code>
+</pre>
+
+    <pre class="fragment" class="cpp" class="fragment">
+        <code lang="cpp" data-trim data-noescape data-line-numbers>
+            int main()
+            {
+              std::shared_ptr&lt;Etudiant&gt; etudiant1(new Etudiant("Marc"));
+              std::shared_ptr&lt;Etudiant&gt; etudiant2(new Etudiant("Lionel"));
+
+              etudiant1->creerBinome(etudiant2);
+              etudiant2->creerBinome(etudiant1);
+            }
+        </code>
+    </pre>
+</section>
+<section>
+    <h3>Problématique (Référence circulaire)</h3>
+    <image class="fragment" width="400" src="./resources/Shared-Pointer1.png"></image>
+    <image class="fragment" width="400" src="./resources/Weak-Pointer1.png"></image>
+</section>
+<section>
+    <h3>Solution (Référence circulaire)</h3>
+    <div class="fragment">
+    <pre class="cpp" class="fragment">
+        <code lang="cpp" data-trim data-noescape data-line-numbers>
+            class Etudiant
+            {
+            public:
+              Etudiant(const std::string& nom) : nom_(nom){}
+              ~Etudiant() {}
+
+              void creerBinome(std::weak_ptr&lt;Etudiant&gt; & binome) {
+                this->binome_ = binome;
+              }
+
+            private:
+              std::string nom_;
+              std::weak_ptr&lt;Etudiant&gt; binome_;
+            };
+        </code>
+    </pre>
+    </div>
+
+    <p class="fragment">Utiliser <b>weak_ptr</b> dans la classe au lieu du <b>shared_ptr</b></p>
+    <p class="fragment">le <b>weak_ptr</b> n'est pas incrémenté dans le <b>shared_ptr</b></p>
+</section>

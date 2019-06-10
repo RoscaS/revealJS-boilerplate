@@ -1,0 +1,15 @@
+<h3>QWeakPointer</h3>
+
+<p>Partage de pointeur faible</p>
+
+<p>
+Ne peut seulement être créé à partir d’un QSharedPointer.
+Peut être promu à un QSharedPointer pour devenir fort de manière thread-safe.</p>
+
+<div class="fragment">
+    
+    <p>Essentiellement, c’est la version moderne de QPointer, plus rapide. On peut remplacer tous les QPointer par des QWeakPointer.</p>
+
+</div>
+
+<aside class="notes">mais il faut faire attention car l’implémentation du polymorphisme a un cout: La taille du pointeur est deux fois plus grosse, mais ce n’est plus tellement important à notre époque (vieux problèmes de compatibilité de binaires).</aside>

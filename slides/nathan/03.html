@@ -1,0 +1,37 @@
+<section>
+    <h2><span class="orange">shared</span>_ptr</h2>
+    <p class="fragment"><b>Partage</b> de la gestion de la mémoire allouée</p>
+    <p class="fragment"><b>Compteur</b> interne</p>
+    <p class="fragment">Libére la mémoire à la dernière instance <b>détruite</b></p>
+</section>
+<section>
+    <h3>Instanciation</h3>
+    <div class="fragment">
+    <pre class="cpp">
+        <code lang="cpp" data-trim data-noescape data-line-numbers>
+            std::shared_ptr&lt;std::string&gt; ptr1(new std::string("shared"));
+            std::shared_ptr&lt;std::string&gt; ptr2(ptr1);
+        </code>
+    </pre>
+    </div>
+</section>
+<section>
+    <h2>Utilisation</h2>
+    <p class="fragment">move(ptr)</p>
+    <p class="fragment">release()</p>
+</section>
+<section>
+    <h3>Use_count</h3>
+    <div class="fragment">
+    <pre class="cpp">
+        <code lang="cpp" data-trim data-noescape data-line-numbers>
+            std::shared_ptr&lt;std::string&gt; ptr1(new std::string("shared"));
+            ptr1.use_count() // = 1
+
+            std::shared_ptr&lt;std::string&gt; ptr2(ptr1);
+            ptr1.use_count() // = 2
+            ptr2.use_count() // = 2
+        </code>
+    </pre>
+    </div>
+</section>
