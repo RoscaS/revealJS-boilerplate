@@ -1,16 +1,26 @@
 <h3><span class="inline">QExplicitlySharedDataPointer</span></h3>
 
-<p>Partage de <span class="orange">données fort</span></p>
+<br />
+
+<ul>
+  <li>Partage de données <b>fort</b></li>
+</ul>
+
+<br>
 
 <div class="fragment">
-    
-    <p>Exactement la même classe que <span class="inline">QSharedDataPointer</span>, sauf qu’elle n’effectuera jamais de détachement par elle-même.</p>
-    <p>Il faudra appeler la fonction <span class="inline">detach()</span> explicitement</p>
-
+  <p style="text-align: left">
+    Exactement la même classe que
+    <span class="inline">QSharedDataPointer</span>, sauf qu’elle n’effectuera
+    jamais de détachement par elle-même.
+  </p>
+  <p style="text-align: left">
+    Il faudra appeler la fonction
+    <span class="inline">detach()</span> explicitement
+  </p>
 </div>
 
-<aside class="notes">Cela permet un meilleur controle sur le détachement et esquive les opérations inutiles.</aside>
-
-
-
-
+<aside class="notes">
+  Cela permet un meilleur controle sur le détachement et esquive les opérations
+  inutiles.
+</aside>

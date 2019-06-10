@@ -1,21 +1,29 @@
-<h3>Partage implicite</h3>
+<h2>
+  Le partage implicite c'est encore <span class="orange">plus</span> vertueux
+</h2>
 
-<p>Ne copie les données en profonduer qu'au moment où elles sont modifiées si elles le sont, repoussant ainsi l'utilisation du CPU au dernier moment ou à jamais.</p>
+<br />
+
+<p style="text-align: left">
+  Ne copie les données en profonduer
+  <span class="green">qu'au moment où elles sont modifiées</span> si elles le
+  sont, repoussant ainsi l'utilisation du CPU au dernier moment ou à jamais.
+</p>
 
 <div class="fragment">
-    <pre class="cpp">
+  <pre class="cpp">
         <code data-trim data-noescape data-line-numbers>
                 void QPen::setStyle(Qt::PenStyle style)
                 {
                     detach();
                     d->style = style;
                 }
-                
+
                 void QPen::detach()
                 {
                     if (d->ref != 1)
                     {
-                        //Deep copy performed here
+                        // Deep copy performed here
                     }
                 }
         </code>

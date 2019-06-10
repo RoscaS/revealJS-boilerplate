@@ -1,23 +1,39 @@
-<h2>Tableau de caractéristiques</h2>
+<h2>Caractéristiques</h2>
+
+<br />
+<br />
+<br />
 
 <table>
-    <colgroup>
-        <col class="premiereColonne">
-        <col class="deuxDernieresColonnes" span="2">
-    </colgroup>
-    <tr>
-         <th> </th>
-         <th>Référencement faible</th>
-         <th>Référencement fort</th>
-    </tr>
-    <tr>
-         <th>Partage pointeur</th>
-         <td><span class="inline">QPointer</span> & <span class="inline">QWeakPointer</span></td>
-         <td><span class="inline">QSharedPointer</span></td>
-    </tr>
-    <tr>
-        <th>Partage donnée</th>
-        <td>-</td>
-        <td><span class="inline">QSharedDataPointer</span> & <span class="inline">QExplicitlySharedDataPointer</span></td>
-    </tr>
+  <colgroup>
+    <col class="premiereColonne" />
+    <col class="deuxDernieresColonnes" span="2" />
+  </colgroup>
+  <tr>
+    <th></th>
+    <th><small>Référencement faible</small></th>
+    <th><small>Référencement fort</small></th>
+  </tr>
+  <tr>
+    <th><small>Partage pointeur</small></th>
+    <td>
+      <small
+        ><span class="inline">QPointer</span> &
+        <span class="inline">QWeakPointer</span></small
+      >
+    </td>
+    <td>
+      <small><span class="inline">QSharedPointer</span></small>
+    </td>
+  </tr>
+  <tr>
+    <th><small>Partage donnée</small></th>
+    <td>-</td>
+    <td>
+      <small
+        ><span class="inline">QSharedDataPointer</span> &
+        <span class="inline">QExplicitlySharedDataPointer</span></small
+      >
+    </td>
+  </tr>
 </table>
