@@ -1,8 +1,7 @@
-<h3>Partage implicite</h3>
 
-<p>En ce qui nous concerne, voici ce qu'il faut en retenir:</p>
+<p>En ce qui nous concerne, voici <span class="orange">ce qu'il faut en retenir</span>:</p>
 
-<div class="fragment">
+<div class="">
     <pre class="cpp">
         <code data-trim data-noescape data-line-numbers>
                 QPixmap p1, p2;
@@ -10,7 +9,7 @@
                 p2 = p1;                         // Copie superficielle
 
                 QPainter paint;
-                paint.begin(&p2);               
+                paint.begin(&p2);
                 paint.drawText(0,50, "Hi");      // Copie profonde effectuée seulement ici
                 paint.end();
         </code>
