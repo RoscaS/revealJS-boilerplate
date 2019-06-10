@@ -1,0 +1,23 @@
+<h3 style="text-align: left">Imagine un <span class="orange">monde</span> sans <span class="inline">delete</span></h3>
+
+<br>
+<br>
+
+<pre class="cpp">
+  <code data-trim data-noescape data-line-numbers>
+    int main() {
+        Babysitter<Ressource> ressourceDansLaBabysitter(new Ressource);
+        /* Pas de delete */
+        return 0;
+    }
+  </code>
+</pre>
+
+<p><b>Output:</b></p>
+
+<pre class="cpp">
+  <code class="nohighlight" data-trim data-noescape data-line-numbers>
+    Ressource acquise!
+    Ressource détruite!
+  </code>
+</pre>

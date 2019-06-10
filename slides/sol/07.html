@@ -1,0 +1,18 @@
+<h2>Une <span class="orange">classe</span> intelligente</h2>
+
+<ul>
+  <li>
+    Son job: <b>Contenir un pointeur</b> qu'on lui passe à la construction.
+  </li>
+  <li>
+    Son second job: <b>Désallouer le pointeur</b> quand l'instance de cette
+    classe sort de son contexte d'initialisation.
+  </li>
+</ul>
+
+<p style="text-align: left">
+  Une telle classe assurerait le fait que
+  <span class="green">lorsqu'elle sort de son contexte</span> de création <b>et</b> est
+  détruite, <span class="red">l'objet qu'elle contient serait détruit</span> lui
+  aussi.
+</p>

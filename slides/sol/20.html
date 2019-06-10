@@ -1,0 +1,18 @@
+<p>
+  Et si à la place d'avoir notre constructeur de copie et l'oppérateur
+  d'assignation qui <span class="red">copient le pointeur</span> (sémentique de
+  copie), ces derniers se contentaient de
+  <b class="green">changer le propriétaire</b> du pointeur contenu dans la
+  <span class="inline">Babysitter</span>.
+</p>
+
+<p style="border: 2px solid #3eaf7c; padding: 5px">
+  Cette idée est au coeur du concepte de la sémantique de déplacement.
+</p>
+
+<p style="text-align: left">
+  La sémantique de déplacement (par opposition à la sémantique de copie) veut
+  dire qu'une classe
+  <span class="green">transfère la possession</span> (ownership) d'un objet à la
+  place d'en faire une copie.
+</p>

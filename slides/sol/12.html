@@ -1,0 +1,20 @@
+<p style="text-align: left">
+  Reprenons notre exemple du début en remplaçant <br>le <b>row</b> pointer par notre
+  <span class="inline">Babysitter</span>:
+</p>
+
+<pre class="cpp">
+  <code data-trim data-noescape data-line-numbers>
+    void uneFonction() {
+        Babysitter&lt;Ressource&gt; ptr(new Ressource);
+        int x;
+        std::cout << "Entrez un entier: ";
+        std::cin >> x;
+
+        if (x == 0) throw 0;
+        ptr->disBonjourKevin();
+
+        /* fin du contexte */
+    }
+  </code>
+</pre>

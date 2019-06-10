@@ -1,0 +1,131 @@
+<section data-transition="slide-in none-out">
+  <h3 style="text-align: left">
+    Une classe <span class="inline">Babysitter</span>
+  </h3>
+  <br />
+  <pre class="cpp">
+    <code data-trim data-noescape data-line-numbers>
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+
+         ~Babysitter() { delete ptr; }
+
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
+    </code>
+  </pre>
+ <p>Overview</p>
+</section>
+
+
+
+
+
+
+<section data-transition="none">
+  <h3 style="text-align: left">
+    Une classe <span class="inline">Babysitter</span>
+  </h3>
+  <br />
+  <pre class="cpp">
+    <code data-trim data-noescape data-line-numbers="3">
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+
+         ~Babysitter() { delete ptr; }
+
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
+    </code>
+  </pre>
+
+ <p>L'objet du babysitting</p>
+</section>
+
+
+
+
+
+
+<section data-transition="none">
+  <h3 style="text-align: left">
+    Une classe <span class="inline">Babysitter</span>
+  </h3>
+  <br />
+  <pre class="cpp">
+    <code data-trim data-noescape data-line-numbers="5">
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+
+         ~Babysitter() { delete ptr; }
+
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
+    </code>
+  </pre>
+  <p>Acquisition de la ressource 🡲 allocation de mémoire.</p>
+</section>
+
+
+
+
+
+
+
+<section data-transition="none">
+  <h3 style="text-align: left">
+    Une classe <span class="inline">Babysitter</span>
+  </h3>
+  <br />
+  <pre class="cpp">
+    <code data-trim data-noescape data-line-numbers="7">
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+
+         ~Babysitter() { delete ptr; }
+
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
+    </code>
+  </pre>
+  <p>Destruction de la ressource 🡲 désallocation de la mémoire.</p>
+</section>
+
+<section data-transition="none">
+  <h3 style="text-align: left">
+    Une classe <span class="inline">Babysitter</span>
+  </h3>
+  <br />
+  <pre class="cpp">
+    <code data-trim data-noescape data-line-numbers="9, 10">
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+
+         ~Babysitter() { delete ptr; }
+
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
+    </code>
+  </pre>
+ <p>Surcharges pour <b>proxy</b> le comportement d'un pointeur.</p>
+</section>

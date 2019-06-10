@@ -1,0 +1,32 @@
+<pre class="cpp">
+  <code data-trim data-noescape data-line-numbers>
+    Babysitter&lt;Ressource&gt; r1(new Ressource);
+    Babysitter&lt;Ressource&gt; r2;
+
+    std::cout << "r1 est: " << (r1.isNull() ? "null" : "pas null") << "\n";
+    std::cout << "r2 est: " << (r2.isNull() ? "null" : "pas null") << "\n";
+
+    std::cout << "Changement de propriétaire\n";
+    r2 = r1; /* r2 est maintenant propriétaire de la ressource */
+
+    std::cout << "r1 est: " << (r1.isNull() ? "null" : "pas null") << "\n";
+    std::cout << "r2 est: " << (r2.isNull() ? "null" : "pas null") << "\n";
+
+  </code>
+</pre>
+
+<div class="fragment">
+  <p><b>Output:</b></p>
+
+  <pre class="shell">
+    <code data-trim data-noescape data-line-numbers>
+      Ressource acquise!
+      r1 est: pas nul
+      r2 est: nul
+      Changement de propriétaire
+      r1 est: nul
+      r2 est: pas nul
+      Ressource détruite!
+    </code>
+  </pre>
+</div>

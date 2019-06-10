@@ -1,0 +1,28 @@
+<p>Considérons la fonction suivante:</p>
+
+<pre class="cpp">
+  <code lang="cpp" data-trim data-noescape data-line-numbers>
+    void uneFonction() {
+        Ressource *ptr = new Ressource;
+        /* Traitement */
+        delete ptr;
+    }
+  </code>
+</pre>
+
+<br />
+
+<div class="fragment">
+  <p>Ainsi que la classe <code class="inline">Ressource</code>:</p>
+
+  <pre class="cpp">
+    <code data-trim data-noescape data-line-numbers>
+      class Ressource {
+      public:
+         Ressource() { std::cout << "Ressource acquise!\n"; }
+         ~Ressource() { std::cout << "Ressource détruite!\n"; }
+         void disBonjourKevin() { std::cout << "Bonjour Kevin"; }
+      };
+    </code>
+  </pre>
+</div>

@@ -1,0 +1,19 @@
+<p>Le code suivant nous mènerait à un résultat similaire:</p>
+
+<pre class="cpp">
+  <code data-trim data-noescape data-line-numbers>
+    void jePrendsDesValeurs(Babysitter&lt;Ressource&gt; ressource) { /* ... */ }
+
+    int main() {
+        Babysitter&lt;Ressource&gt; ressource1(new Ressource);
+        jePrendsDesValeurs(ressource1);
+
+        return 0;
+    }
+  </code>
+</pre>
+
+<p style="text-align: left">
+  Ici <span class="inline">ressource1</span> serait passé par valeur (et donc
+  copié) lors de l'appel de <span class="inline">jePrendsDesValeurs</span> et...
+</p>

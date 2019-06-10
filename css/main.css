@@ -11,12 +11,26 @@
 
 }
 
+/* COLORS */
+
+.orange {
+    color: #ff7200 !important;
+}
+
+.red {
+    color: #d33682 !important;
+}
+
+.green {
+    color: #3eaf7c !important;
+}
 
 
-/* Helpers */
 
-.small {
-    transform: scale(.5);
+/* HELPERS */
+
+.scall-down {
+    transform: scale(.7);
 }
 
 .signature {
@@ -24,15 +38,22 @@
     font-size: .8em;
 }
 
-.highlight {
-    color: #ff7200;
-}
-
 .right {
     float: right;
+    text-align: left;
 }
 
 .left {
     float: left;
+    text-align: left;
 }
 
+.inline {
+    font-family: 'Ubuntu Mono', monospace;
+    color: #D33682;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background-color: #efefef;
+    padding: 1px;
+    /*background: */
+}

@@ -1,0 +1,130 @@
+<p>Pimpons notre <span class="inline">Babysitter</span>:</p>
+
+<section data-transition="slide-in none-out">
+  <pre class="cpp">
+    <code data-trim data-noescape data-line-numbers>
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+         ~Babysitter() { delete ptr; }
+
+         Babysitter(Babysitter& other) {
+             ptr = other.ptr;
+             other.ptr = nullptr;
+         }
+
+         Babysitter& operator=(Babysitter& other) {
+             if (&other == this) return *this;
+             delete ptr;
+             ptr = other.ptr;
+             other.ptr = nullptr;
+             return *this;
+         }
+
+         bool isNull() const { return ptr == nullptr; }
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
+    </code>
+  </pre>
+  <small>Overview du code</small>
+</section>
+
+<section data-transition="none">
+  <pre class="cpp">
+    <code data-trim data-noescape data-line-numbers="8,9,10,11">
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+         ~Babysitter() { delete ptr; }
+
+         Babysitter(Babysitter& other) {
+             ptr = other.ptr;
+             other.ptr = nullptr;
+         }
+
+         Babysitter& operator=(Babysitter& other) {
+             if (&other == this) return *this;
+             delete ptr;
+             ptr = other.ptr;
+             other.ptr = nullptr;
+             return *this;
+         }
+
+         bool isNull() const { return ptr == nullptr; }
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
+    </code>
+  </pre>
+
+  <small>Cstr de copie qui implémente (naivement) la sémentique de déplacement</small>
+</section>
+
+<section data-transition="none">
+  <pre class="cpp">
+    <code data-trim data-noescape data-line-numbers="13,14,15,16,17,18,19">
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+         ~Babysitter() { delete ptr; }
+
+         Babysitter(Babysitter& other) {
+             ptr = other.ptr;
+             other.ptr = nullptr;
+         }
+
+         Babysitter& operator=(Babysitter& other) {
+             if (&other == this) return *this;
+             delete ptr;
+             ptr = other.ptr;
+             other.ptr = nullptr;
+             return *this;
+         }
+
+         bool isNull() const { return ptr == nullptr; }
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
+    </code>
+  </pre>
+  <small>Op d'assignation qui implémente (naivement) la sémantique de déplacement</small>
+</section>
+
+<section data-transition="none">
+  <pre class="cpp">
+    <code data-trim data-noescape data-line-numbers="21">
+      template&lt;class T&gt;
+      class Babysitter {
+         T *ptr;
+      public:
+         Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+         ~Babysitter() { delete ptr; }
+
+         Babysitter(Babysitter& other) {
+             ptr = other.ptr;
+             other.ptr = nullptr;
+         }
+
+         Babysitter& operator=(Babysitter& other) {
+             if (&other == this) return *this;
+             delete ptr;
+             ptr = other.ptr;
+             other.ptr = nullptr;
+             return *this;
+         }
+
+         bool isNull() const { return ptr == nullptr; }
+         T &operator*() const { return *ptr; }
+         T *operator->() const { return ptr; }
+      };
+    </code>
+  </pre>
+  <small>Ça peut servir</small>
+</section>

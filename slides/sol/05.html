@@ -1,0 +1,30 @@
+<p>Si l'utilisateur rentre un entier <code class="inline">!=</code> de zero:</p>
+
+<pre class="cpp">
+    <code class="nohighlight" data-trim data-noescape>
+      Ressource acquise!
+      Bonjour Kevin
+      Ressource détruite!
+    </code>
+  </pre>
+
+<div class="fragment">
+  <p>Si l'utilisateur fait le con:</p>
+  <pre class="cpp">
+    <code class="nohighlight" data-trim data-noescape>
+      Ressource acquise!
+    </code>
+  </pre>
+  <p>... Vous perdez votre job.</p>
+</div>
+
+<div class="fragment">
+  <ul>
+    <li>C'est ce qu'on appelle une <b>fuite de mémoire</b>.</li>
+    <li>
+      Ce problème est dû au fait qu'un pointeur
+      <span class="red">n'a pas</span> de mécanisme inhérent pour nettoyer
+      derrière lui.
+    </li>
+  </ul>
+</div>

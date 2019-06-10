@@ -1,0 +1,71 @@
+<section data-transition="slide-in none-out">
+  <pre class="cpp">
+    <code lang="cpp" data-trim data-noescape data-line-numbers>
+      void laMemeFonction() {
+          Ressource *ptr = new Ressource;
+          int x;
+          std::cout << "Entrez un entier: ";
+          std::cin >> x;
+
+          if (x == 0) return; /* Oups... */
+          ptr->disBonjourKevin();
+
+          delete ptr;
+      }
+    </code>
+  </pre>
+
+  <div class="fragment">
+    <p>ou</p>
+    <pre class="cpp">
+      <code lang="cpp" data-trim data-noescape data-line-numbers>
+        void laMemeFonction() {
+            Ressource *ptr = new Ressource;
+            int x;
+            std::cout << "Entrez un entier: ";
+            std::cin >> x;
+
+            if (x == 0) throw 0; /* Oups... */
+            ptr->disBonjourKevin();
+
+            delete ptr;
+        }
+      </code>
+    </pre>
+  </div>
+</section>
+
+<section data-transition="none">
+  <pre class="cpp">
+      <code lang="cpp" data-trim data-noescape data-line-numbers="7">
+        void laMemeFonction() {
+            Ressource *ptr = new Ressource;
+            int x;
+            std::cout << "Entrez un entier: ";
+            std::cin >> x;
+
+            if (x == 0) return; /* Oups... */
+            ptr->disBonjourKevin();
+
+            delete ptr;
+        }
+      </code>
+    </pre>
+
+  <p>ou</p>
+  <pre class="cpp">
+        <code lang="cpp" data-trim data-noescape data-line-numbers="7">
+          void laMemeFonction() {
+              Ressource *ptr = new Ressource;
+              int x;
+              std::cout << "Entrez un entier: ";
+              std::cin >> x;
+
+              if (x == 0) throw 0; /* Oups... */
+              ptr->disBonjourKevin();
+
+              delete ptr;
+          }
+        </code>
+      </pre>
+</section>

@@ -1,0 +1,112 @@
+<div class="wrapper">
+  <div class="code">
+
+    <pre class="cpp">
+      <code data-trim data-noescape data-line-numbers>
+        int main() {
+            Babysitter&lt;Ressource&gt; ressourceDansLaBabysitter(new Ressource);
+            return 0;
+        }
+      </code>
+    </pre>
+
+    <pre class="cpp">
+        <code lang="cpp" data-trim data-noescape data-line-numbers>
+          class Ressource {
+          public:
+             Ressource() { std::cout << "Ressource acquise!\n"; }
+             ~Ressource() { std::cout << "Ressource détruite!\n"; }
+             void disBonjourKevin() { std::cout << "Bonjour Kevin"; }
+          };
+        </code>
+      </pre>
+
+    <pre class="cpp">
+      <code data-trim data-noescape data-line-numbers>
+        template&lt;class T&gt;
+        class Babysitter {
+           T *ptr;
+        public:
+           Babysitter(T *ptr = nullptr) : ptr(ptr) {}
+           ~Babysitter() { delete ptr; }
+           T &operator*() const { return *ptr; }
+           T *operator->() const { return ptr; }
+        };
+      </code>
+    </pre>
+
+
+
+    <pre class="cpp">
+      <code class="nohighlight" data-trim data-noescape data-line-numbers>
+        Ressource acquise!
+        Ressource détruite!
+      </code>
+    </pre>
+  </div>
+
+  <div class="text">
+    <ul style="font-size: .7em">
+      <li class="fragment">
+        Création dynamique d'un objet
+        <span class="inline">Ressource</span> passé en argument du
+        constructeur de la classe template
+        <span class="inline">Babysitter</span>
+      </li>
+      <li class="fragment">
+        À partir de maintenant
+        <span class="inline">ressourceDansLaBabysitter</span> possède
+        cette <span class="inline">Ressource</span>.
+      </li>
+      <li class="fragment">
+        <span class="inline">ressourceDansLaBabysitter</span> est une
+        variable locale et est dans le scope du main. À la fin de ce dernier,
+        elle sera détruite (pas besoin de la delete).
+      </li>
+      <li class="fragment">
+        Comme <span class="inline">Babysitter</span> est une classe,
+        pendant sa destruction, le destructeur de
+        <span class="inline">Ressource</span> sera appelé.
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<p class="job-done fragment">Mission accomplie pour notre classe intelligente.</p>
+
+<style>
+  .wrapper {
+    position: absolute !important;
+    top: -50px;
+    left: -250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .code {
+    transform: scale(0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .text {
+    margin-top: 120px;
+    width: 550px;
+    margin-left: -50px;
+  }
+
+  .text > ul > li {
+    margin-top: 20px;
+  }
+
+  .job-done {
+    position: absolute;
+    bottom: -630px;
+    left: 350px;
+    border: 2px solid #3eaf7c;
+    padding: 10px;
+  }
+</style>

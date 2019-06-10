@@ -1,0 +1,27 @@
+<p style="text-align: left">
+  Une fausse bonne idée serait d'explicitement définir un constructeur de copie
+  et une surcharge de l'oppérateur de copie et de les delete:
+</p>
+
+<pre class="cpp">
+  <code data-trim data-noescape data-line-numbers>
+Babysitter(const Ressource&) = delete;
+  </code>
+</pre>
+
+<p style="text-align: left">
+  ... et donc d'empecher la possiblité de copier <span class="fragment">
+  ce qui aurait pour effet de
+    résoudre le problème du passage par valeur. Mais comment alors alors retourner nos
+    <span class="inline">Babysitter</span> ?
+</span>
+</p>
+
+<pre class="fragment cpp">
+  <code data-trim data-noescape data-line-numbers>
+  ??? buildRessource() {
+      Ressource *r = new Ressource;
+      return Babysitter(r);
+  }
+  </code>
+</pre>

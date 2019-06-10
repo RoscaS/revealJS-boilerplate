@@ -1,0 +1,35 @@
+<p>
+  Cet exemple naif sert d'introduction et a de nombreux problèmes. Par exemple:
+</p>
+
+<pre class="cpp">
+  <code data-trim data-noescape data-line-numbers>
+    int main() {
+      Babysitter&lt;Ressource&gt; ressource1(new Ressource);
+
+      Babysitter&lt;Ressource&gt; ressource2(ressource1);
+      /* ou Babysitter&lt;Ressource&gt; ressource3 = ressource1; */
+      return 0;
+    }
+  </code>
+</pre>
+
+<p style="text-align: left">
+  Comme le cstr de copie et l'overload de l'oppérateur d'assignation ne sont pas
+  faits, le bon CPP le fait pour nous... Tout aussi naivement que cet exemple
+  d'introduction.
+</p>
+
+<ul>
+  <li class="fragment">
+    Lorsque <span class="inline">ressource1</span> sort de son scope, la
+    <span class="inline">Ressource</span> qu'il contient est détruite
+    <span class="green">(well done bruh).</span>
+  </li>
+  <li class="fragment">
+    Lorsque <span class="inline">ressource2</span> sort de son scope, la
+    <span class="inline">Ressource</span> qu'il croit contenir
+    <s>est encore détruite</s>
+    <span class="red">(shame).</span>
+  </li>
+</ul>
