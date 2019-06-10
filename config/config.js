@@ -3,6 +3,7 @@ Reveal.initialize({
   dependencies: [
     { src: "plugin/markdown/marked.js" },
     { src: "plugin/markdown/markdown.js" },
+    { src: "plugin/notes/notes.js" },
     { src: "socket.io/socket.io.js", async: true },
     { src: "plugin/notes-server/client.js", async: true },
     {
