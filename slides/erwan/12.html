@@ -1,8 +1,8 @@
-<h3>QPointer</h3>
+<h3><span class="inline">QPointer</span></h3>
 
-<p>Partage de pointeur faible</p>
+<p>Partage de <span class="orange">pointeur faible</span></p>
 
-<p>Fonctionne uniquement sur les objects QObject ou ses dérivés.</p>
+<p>Fonctionne uniquement sur les objects <span class="inline">QObject</span> ou ses dérivés.</p>
 
 
 <div class="fragment">
@@ -20,7 +20,7 @@
                 o->setProperty("objectName", "Object");
         </code>
     </pre>
-    <p>Les pointeurs faibles servent à tester l’existence d’un objet. C’est l’utilité qu’on en fait ici. Mais comme son état peut être modifié par un autre thread, son existence une ou deux lignes après n’est donc plus garantie.</p>
+    <p>Les pointeurs <span class="orange">faibles</span> servent à tester l’existence d’un objet. C’est l’utilité qu’on en fait ici. Mais comme son état peut être modifié par un autre thread, son existence une ou deux lignes après n’est donc plus garantie.</p>
 </div>
 
 <aside class="notes">Pour les utliser, il faut donc garantir par un moyen externe qu’ils ne seront pas supprimés. Par exemple comme les QWidget qui ne sont modifiés que dans le thread GUI.</aside>
