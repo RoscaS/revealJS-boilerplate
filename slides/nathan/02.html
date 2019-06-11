@@ -1,23 +1,26 @@
-
 <section>
-    <h2><span class="orange">unique</span>_ptr</h2>
-    <p class="fragment">Une <b>seule instance</b> a accès à la zone mémoire allouer</p>
-    <p class="fragment">La copie et l’assignement sont <b>interdits</b></p>
+  <h2><span class="orange">unique</span>_ptr</h2>
+  <ul>
+    <li class="fragment">
+      Une <b>seule instance</b> a accès à la zone mémoire allouer
+    </li>
+    <li class="fragment">La copie et l’assignement sont <b>interdits</b></li>
+  </ul>
 </section>
 <section>
-    <h3>Instanciation</h3>
-    <div class="fragment">
+  <h3>Instanciation</h3>
+  <div class="fragment">
     <pre class="cpp">
         <code lang="cpp" data-trim data-noescape data-line-numbers>
              std::unique_ptr&lt;std::string&gt; ptr1(new std::string("Je suis unique"));
         </code>
     </pre>
-    </div>
+  </div>
 </section>
 
 <section>
-    <h3>Transfère</h3>
-    <div class="fragment">
+  <h3>Transfère</h3>
+  <div class="fragment">
     <pre class="cpp">
         <code lang="cpp" data-trim data-noescape data-line-numbers>
              ptr2 = ptr1; //ERROR
@@ -28,11 +31,11 @@
             std::unique_ptr&lt;std::string&gt; ptr2(std::move(ptr1));
         </code>
     </pre>
-    </div>
+  </div>
 </section>
 <section>
-    <h3>Utilisation</h3>
-    <div class="fragment">
+  <h3>Utilisation</h3>
+  <div class="fragment">
     <pre class="cpp">
         <code lang="cpp" data-trim data-noescape data-line-numbers>
             ptr1.get() // nullptr
@@ -46,16 +49,16 @@
             std::cout << *ptr2;
         </code>
     </pre>
-    </div>
+  </div>
 </section>
 <section>
-    <h3>Récupérer le pointer de l'objet</h3>
-    <div class="fragment">
+  <h3>Récupérer le pointer de l'objet</h3>
+  <div class="fragment">
     <pre class="cpp">
         <code lang="cpp" data-trim data-noescape data-line-numbers>
             std::string *value2 = ptr2.release();
             delete value2; //IMPORTANT
         </code>
     </pre>
-    </div>
+  </div>
 </section>
