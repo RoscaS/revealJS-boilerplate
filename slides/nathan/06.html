@@ -1,12 +1,16 @@
 <section>
-    <h3>Problématique (Référence <span class="orange">circulaire</span>)</h3>
-    <p class="fragment">Classe <span class="orange">Etudiant</span></p>
-    <p class="fragment">Attribut shared_ptr&lt;<span class="orange">Etudiant</span>&gt; (binôme)</p>
-    <p class="fragment">Destruction</p>
+  <h3>Problématique (Référence <span class="orange">circulaire</span>)</h3>
+  <ul>
+    <li class="fragment">Classe <span class="inline">Etudiant</span></li>
+    <li class="fragment">
+      <span class="inline">Attribut shared_ptr&lt;Etudiant&gt; (binôme)</span>
+    </li>
+    <li class="fragment">Destruction</li>
+  </ul>
 </section>
 <section>
-    <h3>Problématique (Référence <span class="orange">circulaire</span>)</h3>
-    <pre class="fragment" class="cpp" class="fragment">
+  <h3>Problématique (Référence <span class="orange">circulaire</span>)</h3>
+  <pre class="fragment" class="cpp">
     <code lang="cpp" data-trim data-noescape data-line-numbers>
         class Etudiant
         {
@@ -25,7 +29,7 @@
     </code>
 </pre>
 
-    <pre class="fragment" class="cpp" class="fragment">
+  <pre class="fragment" class="cpp">
         <code lang="cpp" data-trim data-noescape data-line-numbers>
             int main()
             {
@@ -39,13 +43,21 @@
     </pre>
 </section>
 <section>
-    <h3>Problématique (Référence <span class="orange">circulaire</span>)</h3>
-    <image class="fragment" width="400" src="./resources/Shared-Pointer1.png"></image>
-    <image class="fragment" width="400" src="./resources/Weak-Pointer1.png"></image>
+  <h3>Problématique (Référence <span class="orange">circulaire</span>)</h3>
+  <image
+    class="fragment"
+    width="400"
+    src="./resources/Shared-Pointer1.png"
+  ></image>
+  <image
+    class="fragment"
+    width="400"
+    src="./resources/Weak-Pointer1.png"
+  ></image>
 </section>
 <section>
-    <h3>Solution (Référence <span class="orange">circulaire</span>)</h3>
-    <div class="fragment">
+  <h3>Solution (Référence <span class="orange">circulaire</span>)</h3>
+  <div class="fragment">
     <pre class="cpp" class="fragment">
         <code lang="cpp" data-trim data-noescape data-line-numbers>
             class Etudiant
@@ -64,8 +76,18 @@
             };
         </code>
     </pre>
-    </div>
+  </div>
 
-    <p class="fragment">Utiliser <b>weak_ptr</b> dans la classe au lieu du <b>shared_ptr</b></p>
-    <p class="fragment">le <b>weak_ptr</b> n'est pas incrémenté dans le <b>shared_ptr</b></p>
+  <br />
+
+  <ul>
+    <li class="fragment">
+      Utiliser <span class="inline">weak_ptr</span> dans la classe au lieu du
+      <span class="inline">shared_ptr</span>
+    </li>
+    <li class="fragment">
+      le <span class="inline">weak_ptr</span> n'est pas incrémenté dans le
+      <span class="inline">shared_ptr</span>
+    </li>
+  </ul>
 </section>
